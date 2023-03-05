@@ -1,0 +1,59 @@
+###
+GET http://127.0.0.1:3000/api/v1/tours HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjk0MmEzNWU0ZTA0YmQ0NzY1ZjcxOCIsImlhdCI6MTY3NzU5NjE3MiwiZXhwIjoxNjg1MzcyMTcyfQ.8n3LzEmbn6LeBQuHnGfPvEW3EL-R8BfRoMufuoQv5SI
+
+###
+GET http://127.0.0.1:3000/api/v1/tours?fields=name,duration,difficulty,price HTTP/1.1
+
+###
+GET http://127.0.0.1:3000/api/v1/tours?duration[gte]=5&difficulty=easy&page=10&price[lt]=1500 HTTP/1.1
+
+###
+GET http://127.0.0.1:3000/api/v1/tours?sort=-price,-ratingsAverage HTTP/1.1
+
+###
+GET http://127.0.0.1:3000/api/v1/tours?limit=5&sort=-ratingsAverage,price HTTP/1.1
+
+###
+GET http://127.0.0.1:3000/api/v1/tours?page=2&limit=3 HTTP/1.1
+
+###
+GET http://127.0.0.1:3000/api/v1/tours/top-5-cheap HTTP/1.1
+
+###
+GET http://127.0.0.1:3000/api/v1/tours/tour-stats HTTP/1.1
+
+###
+GET http://127.0.0.1:3000/api/v1/tours/monthly-plan/2021 HTTP/1.1
+
+###
+GET http://127.0.0.1:3000/api/v1/tours/63f2b7f32e21bbe2b7db4c0 HTTP/1.1
+
+###
+DELETE http://127.0.0.1:3000/api/v1/tours/63fd6ffaae08364abf0fc5ea HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjk0MmEzNWU0ZTA0YmQ0NzY1ZjcxOCIsImlhdCI6MTY3NzU1MzY5NCwiZXhwIjoxNjg1MzI5Njk0fQ.d3_DJ_ZVWCU97d1YtNXkLakSm5Ogd8LOV6zGPI3gDC0
+
+###
+POST http://127.0.0.1:3000/api/v1/tours HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Test tour amazing",
+    "duration": 4,
+    "maxGroupSize": 10,
+    "difficulty": "difficult",
+    "price": 200,
+    "priceDiscount": 100,
+    "summary": "test tour",
+    "imageCover": "tour-3-cover.jpg",
+    "ratingsAverage": 5
+  }
+
+###
+PATCH http://127.0.0.1:3000/api/v1/tours/63f4f402840dfe58950bcb2f HTTP/1.1
+content-type: application/json
+
+{
+  "name": "T",
+  "difficulty": "test"
+}

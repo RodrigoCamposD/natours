@@ -1,0 +1,27 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true,
+    "node": true
+  },
+  "plugins": ["prettier"],
+  "extends": ["prettier", "airbnb"],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "rules": {
+    "consistent-return": "off",
+    "linebreak-style": ["error", "windows"],
+    "quotes": ["error", "double"],
+    "no-console": "off",
+    "no-process-exit": "off",
+    "no-unused-vars": ["error", { "argsIgnorePattern": "req|res|next|val|" }],
+    "func-names": "off",
+    "no-param-reassign": "off",
+    "no-underscore-dangle": "off",
+    "prefer-destructuring": ["error", { "object": true, "array": false }],
+    "no-unused-expressions": ["error", { "allowShortCircuit": true}]
+  }
+}

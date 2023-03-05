@@ -1,0 +1,102 @@
+###
+GET http://127.0.0.1:3000/api/v1/users HTTP/1.1
+
+###
+GET http://127.0.0.1:3000/api/v1/users/50 HTTP/1.1
+
+###
+DELETE http://127.0.0.1:3000/api/v1/users/5 HTTP/1.1
+
+###
+POST http://127.0.0.1:3000/api/v1/users HTTP/1.1
+content-type: application/json
+
+{
+    "name": "admin",
+    "email": "admin@test.com",
+    "password": "pass1234",
+    "passwordConfirm": "pass1234",
+    "role": "admin"
+}
+
+###
+PATCH http://127.0.0.1:3000/api/v1/users/1 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "jonas tour",
+    "duration": 10,
+    "difficulty": "easy"
+}
+
+###
+POST http://127.0.0.1:3000/api/v1/users/signup HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "admin",
+    "email": "admin@test.com",
+    "password": "pass1234",
+    "passwordConfirm": "pass1234",
+    "role": "admin"
+}
+
+###
+POST http://127.0.0.1:3000/api/v1/users/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "test2@test.com",
+    "password": "pass1234"
+}
+
+###
+POST http://127.0.0.1:3000/api/v1/users/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "admin@test.com",
+    "password": "pass1234"
+}
+
+###
+POST http://127.0.0.1:3000/api/v1/users/forgotPassword HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "admin@test.com"
+}
+
+###
+PATCH  http://127.0.0.1:3000/api/v1/users/resetPassword/e332c864c9c932653f37f7b17eff10f1f9d798af6caed5de4b054a911636cd36 HTTP/1.1
+Content-Type: application/json
+
+{
+    "password": "pass1234",
+    "passwordConfirm": "pass1234"
+}
+
+
+###
+PATCH  http://127.0.0.1:3000/api/v1/users/updatePassword HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjk0MmEzNWU0ZTA0YmQ0NzY1ZjcxOCIsImlhdCI6MTY3NzY5MzQxOSwiZXhwIjoxNjg1NDY5NDE5fQ.nKtX1gCbhYhWlsvaG5EsGhQKqjHwf198jYC-yGWVDC
+Content-Type: application/json
+
+{
+    "password": "pass1234",
+    "passwordConfirm": "pass1234",
+    "newPassword": "pass1234"
+}
+
+###
+PATCH  http://127.0.0.1:3000/api/v1/users/updateMe HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjk0MmEzNWU0ZTA0YmQ0NzY1ZjcxOCIsImlhdCI6MTY3NzcxOTQ3MCwiZXhwIjoxNjg1NDk1NDcwfQ.I-8BekbqXOsfr4IHTsme2q2DrGv1fhRuFxnN0kcMzuc
+Content-Type: application/json
+
+{
+    "name": "admin"
+}
+
+###
+DELETE http://127.0.0.1:3000/api/v1/users/deleteMe
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjk0MmEzNWU0ZTA0YmQ0NzY1ZjcxOCIsImlhdCI6MTY3NzcxOTQ3MCwiZXhwIjoxNjg1NDk1NDcwfQ.I-8BekbqXOsfr4IHTsme2q2DrGv1fhRuFxnN0kcMzuc
