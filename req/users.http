@@ -12,11 +12,11 @@ POST http://127.0.0.1:3000/api/v1/users HTTP/1.1
 content-type: application/json
 
 {
-    "name": "admin",
-    "email": "admin@test.com",
+    "name": "user",
+    "email": "user@test.com",
     "password": "pass1234",
     "passwordConfirm": "pass1234",
-    "role": "admin"
+    "role": "guide"
 }
 
 ###
@@ -34,12 +34,14 @@ POST http://127.0.0.1:3000/api/v1/users/signup HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "admin",
-    "email": "admin@test.com",
+    "name": "<div>test</div>",
+    "email": "user@test.com",
     "password": "pass1234",
     "passwordConfirm": "pass1234",
-    "role": "admin"
+    "role": "guide"
 }
+
+// LOGIN
 
 ###
 POST http://127.0.0.1:3000/api/v1/users/login HTTP/1.1

@@ -12,6 +12,7 @@ NODE_ENV=development
 MONGO_STR=connstring
 JWT_SECRET=32_char%String
 JWT_EXPIRES=90d
+COOKIE_EXPIRES=90
 EMAIL_HOST=smtp.server.something
 EMAIL_PORT=2525
 EMAIL_USER=email@user.something
