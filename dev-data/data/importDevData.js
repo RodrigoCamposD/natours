@@ -4,9 +4,7 @@ const mongoose = require("mongoose");
 const Tour = require("../../models/tourModel");
 
 console.log(__dirname);
-const tours = JSON.parse(
-  readFileSync(`${__dirname}/tours-simple.json`, "utf8"),
-);
+const tours = JSON.parse(readFileSync(`${__dirname}/tours.json`, "utf8"));
 
 mongoose
   .set("strictQuery", false)

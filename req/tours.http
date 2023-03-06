@@ -1,6 +1,6 @@
 ###
 GET http://127.0.0.1:3000/api/v1/tours HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjk0MmEzNWU0ZTA0YmQ0NzY1ZjcxOCIsImlhdCI6MTY3NzU5NjE3MiwiZXhwIjoxNjg1MzcyMTcyfQ.8n3LzEmbn6LeBQuHnGfPvEW3EL-R8BfRoMufuoQv5SI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjk0MjJlNGY2MTk3MWU4MmQ2NGI5NyIsImlhdCI6MTY3ODA2MTYyOCwiZXhwIjoxNjg1ODM3NjI4fQ.YZDZ1VGypsZdjIaVEjqYBhIFHdxf2PrZbrPb4w7Ve6g
 
 ###
 GET http://127.0.0.1:3000/api/v1/tours?fields=name,duration,difficulty,price HTTP/1.1
@@ -28,7 +28,7 @@ GET http://127.0.0.1:3000/api/v1/tours/tour-stats HTTP/1.1
 GET http://127.0.0.1:3000/api/v1/tours/monthly-plan/2021 HTTP/1.1
 
 ###
-GET http://127.0.0.1:3000/api/v1/tours/63f2b7f32e21bbe2b7db4c0 HTTP/1.1
+GET http://127.0.0.1:3000/api/v1/tours/64052ee71023066e4f2e3c06 HTTP/1.1
 
 ###
 DELETE http://127.0.0.1:3000/api/v1/tours/63fd6ffaae08364abf0fc5ea HTTP/1.1
@@ -47,7 +47,8 @@ content-type: application/json
     "priceDiscount": 100,
     "summary": "test tour",
     "imageCover": "tour-3-cover.jpg",
-    "ratingsAverage": 5
+    "ratingsAverage": 5,
+    "guides": ["63f9422e4f61971e82d64b97", "63f942a35e4e04bd4765f718" ]
   }
 
 ###
