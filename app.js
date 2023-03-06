@@ -10,6 +10,7 @@ const globalErrorHandler = require("./controllers/errorController");
 
 const tourRoutes = require("./routes/tourRoutes");
 const userRouter = require("./routes/userRoutes");
+const reviewRouter = require("./routes/reviewRoutes");
 
 const limiter = rateLimit({
   max: 100,
@@ -25,15 +26,18 @@ app.use(express.json({ limit: "10kb" }));
 app.use(mongoSanitize());
 app.use(xss());
 if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
-app.use(hpp({
-  whitelist: [
-    "duration",
-    "ratingsQuantity",
-    "ratingsAverage",
-    "maxGroupSize",
-    "difficulty",
-    "price"],
-}));
+app.use(
+  hpp({
+    whitelist: [
+      "duration",
+      "ratingsQuantity",
+      "ratingsAverage",
+      "maxGroupSize",
+      "difficulty",
+      "price",
+    ],
+  }),
+);
 
 app.use(express.static("./public"));
 
@@ -45,6 +49,7 @@ app.use((req, res, next) => {
 
 app.use("/api/v1/tours", tourRoutes);
 app.use("/api/v1/users", userRouter);
+app.use("/api/v1/reviews", reviewRouter);
 
 app.all("*", (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));

@@ -12,7 +12,7 @@ const reviewSchema = new mongoose.Schema(
       max: 5,
     },
     createdAt: {
-      Date,
+      type: Date,
       default: Date.now(),
     },
     tour: {
@@ -31,6 +31,17 @@ const reviewSchema = new mongoose.Schema(
     toObject: { virtuals: true },
   },
 );
+
+reviewSchema.pre(/^find/, function (next) {
+  this.populate({
+    path: "tour",
+    select: "name",
+  }).populate({
+    path: "user",
+    select: "name photo",
+  });
+  next();
+});
 
 const Review = mongoose.model("Review", reviewSchema);
 

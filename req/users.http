@@ -70,7 +70,7 @@ Content-Type: application/json
 }
 
 ###
-PATCH  http://127.0.0.1:3000/api/v1/users/resetPassword/e332c864c9c932653f37f7b17eff10f1f9d798af6caed5de4b054a911636cd36 HTTP/1.1
+PATCH  http://127.0.0.1:3000/api/v1/users/resetPassword/47e68105fff76211af93b919c38505583bd1daf8921bbf2df1a37b5d511c3b71 HTTP/1.1
 Content-Type: application/json
 
 {
