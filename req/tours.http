@@ -31,7 +31,7 @@ GET http://127.0.0.1:3000/api/v1/tours/monthly-plan/2021 HTTP/1.1
 GET http://127.0.0.1:3000/api/v1/tours/64052ee71023066e4f2e3c06 HTTP/1.1
 
 ###
-DELETE http://127.0.0.1:3000/api/v1/tours/63fd6ffaae08364abf0fc5ea HTTP/1.1
+DELETE http://127.0.0.1:3000/api/v1/tours/64052ee71023066e4f2e3c06 HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjk0MmEzNWU0ZTA0YmQ0NzY1ZjcxOCIsImlhdCI6MTY3NzU1MzY5NCwiZXhwIjoxNjg1MzI5Njk0fQ.d3_DJ_ZVWCU97d1YtNXkLakSm5Ogd8LOV6zGPI3gDC0
 
 ###
