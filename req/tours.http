@@ -60,3 +60,9 @@ content-type: application/json
   "name": "T",
   "difficulty": "test"
 }
+
+###
+GET http://127.0.0.1:3000/api/v1/tours/tours-within/400/center/34.0201613,-118.6919126/unit/mi
+
+###
+GET http://127.0.0.1:3000/api/v1/tours/distances/34.0201613,-118.6919126/unit/mi
