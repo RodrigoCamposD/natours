@@ -48,8 +48,8 @@ POST http://127.0.0.1:3000/api/v1/users/login HTTP/1.1
 Content-Type: application/json
 
 {
-    "email": "test2@test.com",
-    "password": "pass1234"
+    "email": "laura@example.com",
+    "password": "test1234"
 }
 
 ###

@@ -14,7 +14,7 @@ GET http://127.0.0.1:3000/api/v1/tours?sort=-price,-ratingsAverage HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjk0MjJlNGY2MTk3MWU4MmQ2NGI5NyIsImlhdCI6MTY3ODA2MTYyOCwiZXhwIjoxNjg1ODM3NjI4fQ.YZDZ1VGypsZdjIaVEjqYBhIFHdxf2PrZbrPb4w7Ve6g
 
 ###
-GET http://127.0.0.1:3000/api/v1/tours?limit=5&sort=-ratingsAverage,price HTTP/1.1
+GET http://127.0.0.1:3000/api/v1/tours?price[lt]=1000&ratingsAverage[gte]=4.7 HTTP/1.1
 
 ###
 GET http://127.0.0.1:3000/api/v1/tours?duration=9&duration=3 HTTP/1.1
@@ -38,19 +38,18 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjk0MmEzN
 
 ###
 POST http://127.0.0.1:3000/api/v1/tours HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZDViMDE5MGIyMTQzNjBkYzA1NyIsImlhdCI6MTY3ODYzMDg3NywiZXhwIjoxNjg2NDA2ODc3fQ.I7MZCccCQlJphPXdhiRoX2xCaVIvDPs9VY5Lw1wtSUc
 content-type: application/json
 
 {
-    "name": "Test tour amazing",
-    "duration": 4,
-    "maxGroupSize": 10,
-    "difficulty": "difficult",
+    "name": "Test Tour Amazing",
+    "duration": 1,
+    "maxGroupSize": 1,
+    "difficulty": "easy",
     "price": 200,
     "priceDiscount": 100,
     "summary": "test tour",
-    "imageCover": "tour-3-cover.jpg",
-    "ratingsAverage": 5,
-    "guides": ["63f9422e4f61971e82d64b97", "63f942a35e4e04bd4765f718" ]
+    "imageCover": "tour-3-cover.jpg"
   }
 
 ###
