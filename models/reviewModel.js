@@ -71,10 +71,10 @@ reviewSchema.post("save", function () {
   this.constructor.calcAverageRatings(this.tour);
 });
 
-reviewSchema.pre(/^findOneAnd/, async function (next) {
-  this.r = await this.clone().findOne();
-  next();
-});
+// reviewSchema.pre(/^findOneAnd/, async function (next) {
+//   this.r = await this.clone().findOne();
+//   next();
+// });
 
 reviewSchema.post(/^findOneAnd/, async (doc, next) => {
   await doc.constructor.calcAverageRatings(doc.tour);
