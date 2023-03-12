@@ -1,4 +1,3 @@
-const Review = require("../models/reviewModel");
 const APIFeatures = require("../utils/apiFeatures");
 const AppError = require("../utils/appError");
 const catchAsync = require("../utils/catchAsync");
@@ -35,13 +34,11 @@ exports.updateOne = (Model) => catchAsync(async (req, res, next) => {
     runValidators: true,
   });
   if (!document) return next(new AppError("No document found with that id", 404));
-  if (document instanceof Review) await document.save();
   res.json({ status: "success", data: document });
 });
 
 exports.deleteOne = (Model) => catchAsync(async (req, res, next) => {
   const document = await Model.findByIdAndDelete(req.params.id);
   if (!document) return next(new AppError("No document found with that id", 404));
-  if (document instanceof Review) await document.save();
   res.json({ status: "success", data: document });
 });
