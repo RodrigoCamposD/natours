@@ -1,5 +1,6 @@
 const Tour = require("../models/tourModel");
 const catchAsync = require("../utils/catchAsync");
+// const AppError = require("../utils/appError");
 
 exports.getOverview = catchAsync(async (req, res) => {
   const tours = await Tour.find();
@@ -10,7 +11,10 @@ exports.getOverview = catchAsync(async (req, res) => {
 });
 
 exports.getTour = catchAsync(async (req, res) => {
-  res.status(200).render("tour", {
-    title: "The Forest Hiker",
+  const tour = await Tour.findOne({ slug: req.params.slug }).populate({
+    path: "reviews",
+    fields: "review rating user",
   });
+  // if (!tour) return next(new AppError("No document found with that slug", 404));
+  res.status(200).render("tour", { title: `${tour.name} Tour`, tour });
 });
