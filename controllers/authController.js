@@ -54,11 +54,12 @@ exports.login = catchAsync(async (req, res, next) => {
 });
 
 exports.protect = catchAsync(async (req, res, next) => {
-  // exist token?
   const fullToken = req.headers.authorization;
   let token;
   if (fullToken && fullToken.startsWith("Bearer")) {
     token = fullToken.split(" ")[1];
+  } else if (req.cookies.jwt) {
+    token = req.cookies.jwt;
   }
   if (!token) {
     return next(
@@ -84,6 +85,18 @@ exports.protect = catchAsync(async (req, res, next) => {
     );
   }
   req.user = tokenUser;
+  next();
+});
+
+exports.isLoggedIn = catchAsync(async (req, res, next) => {
+  if (req.cookies.jwt) {
+    const decoded = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRET);
+    const tokenUser = await User.findById(decoded.id);
+    if (!tokenUser) return next();
+    if (tokenUser.changedPasswordAfter(decoded.iat)) return next();
+    res.locals.user = tokenUser;
+    return next();
+  }
   next();
 });
 
