@@ -1,8 +1,9 @@
-import { login } from "./login";
+import { login, logout } from "./login";
 import { displayMap } from "./displayMap";
 
 const mapEl = document.getElementById("map");
 const loginForm = document.querySelector(".form");
+const logoutBtn = document.querySelector(".nav__el--logout");
 
 if (mapEl) {
   const locations = JSON.parse(document.getElementById("map").dataset.locations);
@@ -17,3 +18,5 @@ if (loginForm) {
     login(email, password);
   });
 }
+
+if (logoutBtn) logoutBtn.addEventListener("click", logout);
