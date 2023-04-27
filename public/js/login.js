@@ -18,7 +18,6 @@ const login = async (email, password) => {
       }, 1500);
     }
   } catch (error) {
-    console.log(error);
     showAlert("error", error.response.data.message);
   }
 };
