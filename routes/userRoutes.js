@@ -12,7 +12,7 @@ router.use(authController.protect); // protecting all routes below
 
 router.patch("/updatePassword", authController.updatePassword);
 router.get("/me", userController.getMe, userController.getUser);
-router.patch("/updateMe", userController.updateMe);
+router.patch("/updateMe", userController.uploadUserPhoto, userController.resizeUserPhoto, userController.updateMe);
 router.delete("/deleteMe", userController.deleteMe);
 
 router.use(authController.restrictTo("admin")); // resctricting all routes below
